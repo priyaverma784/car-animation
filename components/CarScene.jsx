@@ -4,7 +4,10 @@ import * as THREE from "three";
 import { buildCar } from "@/lib/buildCar";
 import { sampleCamera } from "@/lib/cameraPath";
 
-
+/**
+ * Real-time 3D scene. It never listens to scroll: it reads the shared `stateRef`
+ * ({ progress, vel, introX }) that GSAP updates, and damps toward it every frame.
+ */
 export default function CarScene({ stateRef }) {
   const mountRef = useRef(null);
 
